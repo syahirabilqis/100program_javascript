@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Diskon</title>
+</head>
+<body>
+    <h2>Hitung Harga Setelah Diskon</h2>
+    <label>Harga Produk: </label>
+    <input type="number" id="harga" placeholder="Misal: 100000"><br><br>
+
+    <label>Persentase Diskon (%): </label>
+    <input type="number" id="diskon" placeholder="Misal: 20"><br><br>
+
+    <button onclick="hitungDiskon()">Hitung</button>
+
+    <p><strong>Harga Setelah Diskon:</strong> <span id="hasil"></span></p>
+
+    <script>
+        function hitungDiskon() {
+            const harga = parseFloat(document.getElementById("harga").value);
+            const diskon = parseFloat(document.getElementById("diskon").value);
+            
+            if (isNaN(harga) || isNaN(diskon)) {
+                document.getElementById("hasil").textContent = "Mohon masukkan angka yang valid.";
+                return;
+            }
+
+            const hargaAkhir = harga - (harga * diskon / 100);
+            document.getElementById("hasil").textContent = "Rp " + hargaAkhir.toFixed(2);
+        }
+    </script>
+</body>
+</html>

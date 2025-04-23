@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hapus Tanda Baca</title>
+</head>
+<body>
+    <input type="text" id="inputTeks" placeholder="Masukkan kata">
+    <button onclick="hapusTandaBaca()">Proses</button>
+    
+    <p><strong>Teks Asli:</strong> <span id="teksAsli"></span></p>
+    <p><strong>Teks Bersih:</strong> <span id="teksBersih"></span></p>
+
+    <script>
+        function hapusTandaBaca() {
+            const teks = document.getElementById("inputTeks").value;
+            const tandaBaca = ".,!?;:-_\"'()[]{}<>@#%^&*~`/|\\";
+            let teksBersih = "";
+
+            for (let i = 0; i < teks.length; i++) {
+                if (!tandaBaca.includes(teks[i])) {
+                    teksBersih += teks[i];
+                }
+            }
+
+            document.getElementById("teksAsli").textContent = teks;
+            document.getElementById("teksBersih").textContent = teksBersih;
+        }
+    </script>
+</body>
+</html>
