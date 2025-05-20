@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cek Kata dalam Kalimat</title>
+</head>
+<body>
+  <h2>Cek Kata dalam Kalimat</h2>
+
+  <label for="kalimat">Masukkan Kalimat:</label><br>
+  <input type="text" id="kalimat" size="50"><br><br>
+
+  <label for="kata">Masukkan Kata yang Dicari:</label><br>
+  <input type="text" id="kata"><br><br>
+
+  <button onclick="cekKata()">Cek</button>
+
+  <p id="hasil"></p>
+
+  <script>
+    function cekKata() {
+      const kalimat = document.getElementById("kalimat").value.toLowerCase();
+      const kata = document.getElementById("kata").value.toLowerCase();
+      const hasil = document.getElementById("hasil");
+
+      if (kalimat.includes(kata)) {
+        hasil.innerText = `Kata "${kata}" ditemukan dalam kalimat.`;
+      } else {
+        hasil.innerText = `Kata "${kata}" tidak ditemukan dalam kalimat.`;
+      }
+    }
+  </script>
+</body>
+</html>

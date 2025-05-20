@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menghitung umur dari tahun lahir</title>
+</head>
+<body>
+  <label>Masukkan Tahun Lahir:</label><br>
+  <input type="number" id="tahunLahir">
+  <button onclick="hitungUmur()">Hitung</button>
+
+  <script>
+    function hitungUmur() {
+      let tahunLahir = document.getElementById("tahunLahir").value;
+      let tahunSekarang = new Date().getFullYear();
+      let umur = tahunSekarang - tahunLahir;
+
+      console.log("Umur kamu.." + umur + " tahun");
+    }
+  </script>
+</body>
+</html>

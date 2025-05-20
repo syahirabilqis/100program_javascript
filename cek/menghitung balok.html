@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>balok</title>
+</head>
+<body>
+  <h3>menghitung balok</h3>
+  <input id ="p" placeholder="panjang">
+  <input id ="l" placeholder="lebar">
+  <input id ="t" placeholder="tinggi">
+  <button onclick="hitungBalok()">hitung</button>
+
+  <script>
+    function hitungBalok() {
+      let p = parseFloat(document.getElementById(`p`).value);
+      let l = parseFloat(document.getElementById(`l`).value);
+      let t = parseFloat(document.getElementById(`t`).value);
+      let volume = p * l * t;
+      let luas = 2 * (p*l + p*t + l*t);
+      console.log("== balok ==");
+      console.log("volume:",volume);
+      console.log("luas permukaan:", luas);
+    }
+  </script>
+</body>
+</html>
