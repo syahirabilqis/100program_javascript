@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cek bilangan prima</title>
+</head>
+<body>
+  <h2>Deteksi Bilangan Prima</h2>
+  <input id="angkaPrima" type="number" placeholder="Masukkan angka" />
+  <button onclick="cekPrima()">Cek Prima</button>
+
+  <script>
+    function cekPrima() {
+      const num = parseInt(document.getElementById("angkaPrima").value);
+      if (num <= 1) {
+        console.log(num, "bukan bilangan prima.");
+        return;
+      }
+      let prima = true;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          prima = false;
+          break;
+        }
+      }
+      console.log(num, prima ? "adalah bilangan prima" : "bukan bilangan prima");
+    }
+  </script>
+</body>
+</html>

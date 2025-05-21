@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konversi suhu</title>
+</head>
+<body>
+  <h2>konversi suhu</h2>
+  <input id="celcius" type="number" placeholder="Masukkan suhu (°C)" />
+  <button onclick="konversi()">Konversi ke °F</button>
+
+  <script>
+    function konversi() {
+      const c = parseFloat(document.getElementById("celcius").value);
+      const f = (c * 9/5) + 32;
+      console.log(`${c}°C = ${f.toFixed(2)}°F`);
+    }
+  </script>
+</body>
+</html>
